@@ -184,8 +184,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" wire:click.prevent="accept()" class="btn btn-success">@lang('site.accept')</button>
-                    <button type="button" wire:click.prevent="delete()" class="btn btn-danger">@lang('site.delete')</button>
+                    <button type="button" wire:click.prevent="accept()" class="btn btn-success" data-dismiss="modal" aria-label="Close">@lang('site.accept')</button>
+                    <button type="button" wire:click.prevent="delete()" class="btn btn-danger" data-dismiss="modal" aria-label="Close">@lang('site.delete')</button>
                 </div>
             </div>
         </div>
