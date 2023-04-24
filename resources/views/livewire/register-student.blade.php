@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-8">
-                <p class="sign-head"><i class="fas fa-arrow-right"></i>@lang('site.register')</p>
+                <p class="sign-head"><i class="fas fa-arrow-right"></i> @lang('site.register')</p>
                 <div class="sign-card bg-card-dark p-5 rounded">
                     <form
                             x-data="{ isUploading: false, progress: 0 }"
@@ -59,7 +59,7 @@
 
 
                         <div class="d-grid gap-2">
-                            <button type="submit" x-show="!isUploading" class="btn btn-2 px-3 mt-2">@lang('site.register')</button>
+                            <button type="submit" x-show="!isUploading" class="btn px-3 mt-2 btn-danger">@lang('site.register')</button>
                         </div>
                     </form>
 
