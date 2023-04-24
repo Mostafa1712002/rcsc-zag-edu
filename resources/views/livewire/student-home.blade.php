@@ -85,7 +85,63 @@
         </div>
     </div>
 </section>
-
+{{-- style --}}
+@push('styles')
+    <style>
+        .sign-card{
+            background: #B0DAFF;
+            box-shadow: 0px 0px 10px #00000029;
+        }
+        .sign-card label{
+            font-size: 16px;
+            font-weight: 500;
+            color: #212529;
+            margin-bottom: 10px;
+        }
+        .sign-head{
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .sign-card .form-control{
+            background: #B0DAFF;
+            border-radius: 10px;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .sign-card .form-control:focus{
+            background: #F2F2F2;
+            border-radius: 10px;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .sign-card .form-control::placeholder{
+            color: #000;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .sign-card .form-control:focus::placeholder{
+            color: #000;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .table{
+            background-color: #B0DAFF
+        }
+        button {
+            background-color: #2F58CD !important;
+        }
+    </style>
+@endpush
 @push('scripts')
     <script>
     $(document).ready(function() {
