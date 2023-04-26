@@ -2,53 +2,6 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-8">
-                @php
-                $user = auth()->user();
-                $courses =
-                \App\Models\Course::get();
-                @endphp
-                @if(!$user->course_ids && !$user->personal_pic && !$user->ack_video)
-
-
-                <form action="{{ route("student.finish-data",$user->id) }}" method="post" enctype="multipart/form-data">
-                    <h2>@lang("site.complete your data")</h2>
-                    @csrf
-
-                    <div class="mb-2">
-                        <label for="Fname" class="form-label float-end">@lang('validation.attributes.course_ids')</label>
-                        <select multiple class="form-control" name="course_ids[]">
-                            @foreach($courses as $course)
-                            <option value="{{$course->id}}" data-search='{{ $course->{'title_'.app()->getLocale()} }}'>{{ $course->{'title_'.app()->getLocale()} }}</option>
-                            @endforeach
-                        </select>
-                        @error('course_ids') <p class="text-danger">{{$message}}</p> @enderror
-                    </div>
-
-
-                    <div class="mb-2">
-                        <label for="personal_pic" class="form-label float-end">@lang('validation.attributes.personal_pic')</label>
-                        <input type="file" class="form-control form-control-3   @error('personal_pic') is-invalid @enderror" name="personal_pic" accept="image/png, image/jpeg, image/jpg,
-                        image/gif" />
-                        @error('personal_pic') <p class="text-danger">{{$message}}</p> @enderror
-                    </div>
-
-                    <div class="mb-2">
-                        <label for="ack_video" class="form-label float-end">@lang('validation.attributes.ack_video')</label>
-                        <input name="ack_video" type="file" class="form-control form-control-3  @error('ack_video') is-invalid @enderror" accept="video/mp4,video/x-m4v,video/*" />
-                        @error('ack_video') <p class="text-danger">{{$message}}</p> @enderror
-                    </div>
-
-
-                    <div class="d-grid gap-2">
-                        <button type="submit" class="btn px-3 mt-2 btn-danger">@lang('site.save')</button>
-                    </div>
-                </form>
-
-
-
-
-
-                @else
 
                 @if($has_already_answered_exam)
                 <div class="alert alert-warning">@lang('site.you_have_already_answered_this_exam')</div>
@@ -118,9 +71,6 @@
                 <div class="alert alert-warning">@lang('site.please_upload_exam_pic')</div>
                 @endif
                 @endif
-
-                @endif
-
             </div>
         </div>
     </div>
@@ -184,6 +134,8 @@
     .table {
         background-color: #B0DAFF
     }
+
+
 
 </style>
 @endpush
