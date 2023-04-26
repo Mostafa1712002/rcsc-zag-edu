@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-8">
-                <p class="sign-head"><i class="fas fa-arrow-right"></i>@lang('site.login')</p>
+                <p class="sign-head"><i class="fas fa-arrow-right"></i> @lang('site.login')</p>
                 <div class="sign-card bg-card-dark p-5 rounded">
                     <form class="l-custom" wire:submit.prevent='store' >
                         @csrf
@@ -16,7 +16,7 @@
 
                         <div class="d-grid gap-2">
 
-                            <button type="submit" class="btn btn-2 px-3 mt-2">@lang('site.login')</button>
+                            <button type="submit" class="btn btn-danger px-3 mt-2">@lang('site.login')</button>
                         </div>
                     </form>
 
