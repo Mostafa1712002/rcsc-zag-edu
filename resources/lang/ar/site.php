@@ -192,6 +192,8 @@ return [
     "exam_degree" => 'نتيجة الإمتحان',
     "updated_successfully" =>
     'تم التعديل بنجاح',
+    "complete your data" =>
+    'إكمال بياناتك',
     '' => '',
     '' => '',
     '' => '',

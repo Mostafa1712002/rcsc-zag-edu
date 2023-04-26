@@ -73,6 +73,8 @@ return [
     "exam_degree" => "Exam result",
     "updated_successfully" =>
     "Updated successfully",
+    "complete your data" =>
+    "Complete your data",
     '' => '',
     '' => '',
     '' => '',

@@ -28,6 +28,8 @@ Route::group([
     Route::group(['prefix' => 'student', 'middleware' => ['auth:student'], 'as' => 'student.'], function () {
         Route::get('home', StudentHomeController::class)->name('home');
         Route::get('exam-finished', [StudentHomeController::class, 'examFinished'])->name('exam_finished');
+        Route::post("finish-data/{id}", [StudentHomeController::class, 'finishData'])->name("finish-data");
+
     });
 
     Route::get('logout', [LoginController::class, 'logout']);
@@ -52,7 +54,7 @@ Route::group([
         // edit student exam
         Route::get('student/{student}/edit', [StudentController::class, 'edit'])->name('student.edit');
         Route::put('student/{student}', [StudentController::class, 'update'])->name('student.update');
-        
+
         Route::get('certificate/{student}', [CertificateController::class, 'show'])->name('certificate.show');
         Route::get('question', [QuestionController::class, 'index'])->name('question.index');
         Route::get('course', [CourseController::class, 'index'])->name('course.index');

@@ -44,30 +44,31 @@ class StudentController extends Controller
                 foreach ($columns as $column) {
                     $i = 0;
                     foreach ($column as $row) {
-                        $courses_id = $row[2];
-                        $courses_id = explode(',', $courses_id);
-                        $courses_id = array_map('trim', $courses_id);
-                        $courses_id = array_map('intval', $courses_id);
-                        $courses_id = array_filter($courses_id);
-                        $courses_id = array_unique($courses_id);
-                        $data = [];
-                        foreach ($courses_id as $course_id) {
-                            $course = \App\Models\Course::find($course_id);
-                            if (!$course) {
-                                return $this->redirect->with('error', __('site.review your excl sheet'));
-                            }
-                            array_push($data, "$course_id");
-                        }
-                        $row[2] = $data;
+                        // $courses_id = $row[2];
+                        // $courses_id = explode(',', $courses_id);
+                        // $courses_id = array_map('trim', $courses_id);
+                        // $courses_id = array_map('intval', $courses_id);
+                        // $courses_id = array_filter($courses_id);
+                        // $courses_id = array_unique($courses_id);
+                        // $data = [];
+                        // foreach ($courses_id as $course_id) {
+                        //     $course = \App\Models\Course::find($course_id);
+                        //     if (!$course) {
+                        //         return $this->redirect->with('error', __('site.review your excl sheet'));
+                        //     }
+                        //     array_push($data, "$course_id");
+                        // }
+                        // $row[2] = $data;
                         $student = $this->model->where('national_id', $row[1])->first();
                         if (!$student) {
-                            $this->model->create([
+                            $new_student = $this->model->create([
                                 'full_name' => $row[0],
                                 'national_id' => $row[1],
-                                'course_ids' => $row[2],
+                                'course_ids' => null,
                                 'password' => \Illuminate\Support\Facades\Hash::make($row[1]),
-                                'personal_pic' => ' ',
-                                'ack_video' => ' ',
+                                "status" => "active",
+                            ]);
+                            $new_student->update([
                                 "status" => "active",
                             ]);
                         }
@@ -112,4 +113,5 @@ class StudentController extends Controller
         $record->update($data);
         return $this->redirect->with('success', __('site.updated_successfully'));
     }
+
 }
