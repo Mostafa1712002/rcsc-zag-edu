@@ -37,11 +37,11 @@
 
     <script src='{{asset('js/app.js')}}'></script>
 
-    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6277a2a99d3f9e001262d485&product=inline-share-buttons" async="async"></script>
-</head>
-<!-- start body -->
-<body>
-    <!-- start header -->
+        <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6277a2a99d3f9e001262d485&product=inline-share-buttons" async="async"></script>
+    </head>
+    <!-- start body -->
+    <body class="d-flex justify-content-between flex-column">
+        <!-- start header -->
 
     <header>
         <!-- start navbar -->

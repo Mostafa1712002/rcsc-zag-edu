@@ -49,6 +49,7 @@
   }
   body {
     direction: ltr;
+    height: 100vh;
   }
   a {
     text-decoration: none;
