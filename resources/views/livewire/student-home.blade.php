@@ -88,6 +88,9 @@
 {{-- style --}}
 @push('styles')
     <style>
+        .sign-in{
+            margin: auto 0;
+        }
         .sign-card{
             background: #B0DAFF;
             box-shadow: 0px 0px 10px #00000029;
