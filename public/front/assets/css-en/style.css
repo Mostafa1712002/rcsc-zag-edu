@@ -198,6 +198,10 @@
       left: 8px;
       top: 5px;
   }
+  /* footer */
+footer{
+    margin-top: auto;
+}
   /* start sub-footer */
   .sub-footer{
       padding: 30px 0;
@@ -553,6 +557,8 @@
   .sign-in{
       padding: 60px 0;
       text-align: center;
+          margin-top: auto;
+    margin-bottom: auto;
   }
   .field-icon {
       float: right;
